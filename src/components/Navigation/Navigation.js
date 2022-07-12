@@ -1,5 +1,12 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav,
+  NavDropdown,
+  Form,
+  Button,
+} from "react-bootstrap";
 
 const Navigation = () => {
   return (
@@ -8,8 +15,9 @@ const Navigation = () => {
         <Navbar.Brand href="#home" className="text-uppercase ">
           ATG World
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="ms-auto">
             <NavDropdown
               title="Create an Account.Its Free"
