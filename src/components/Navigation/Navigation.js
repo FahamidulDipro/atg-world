@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import Signup from "../Signup/Signup";
@@ -47,20 +40,19 @@ const Navigation = () => {
                   </Button>
 
                   <Modal show={show} onHide={handleClose}>
+                    <p
+                      style={{ fontSize: "11px", backgroundColor: "#EFFFF4" }}
+                      className="p-2 text-success"
+                    >
+                      Let's learn, share & inspire each other with our passion
+                      for computer engineering. Sign up now 🤘🏼
+                    </p>
                     <Modal.Header closeButton>
                       <Modal.Title>Create Account</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       <Signup></Signup>
                     </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        Close
-                      </Button>
-                      <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                      </Button>
-                    </Modal.Footer>
                   </Modal>
                 </>
               </NavDropdown.Item>
@@ -74,20 +66,19 @@ const Navigation = () => {
                   </Button>
 
                   <Modal show={show2} onHide={handleClose2}>
+                    <p
+                      style={{ fontSize: "11px", backgroundColor: "#EFFFF4" }}
+                      className="p-2 text-success"
+                    >
+                      Let's learn, share & inspire each other with our passion
+                      for computer engineering. Sign up now 🤘🏼
+                    </p>
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
+                      <Modal.Title>Sign In</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       <Login></Login>
                     </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose2}>
-                        Close
-                      </Button>
-                      <Button variant="primary" onClick={handleClose2}>
-                        Save Changes
-                      </Button>
-                    </Modal.Footer>
                   </Modal>
                 </>
               </NavDropdown.Item>
