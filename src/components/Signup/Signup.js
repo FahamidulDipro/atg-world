@@ -1,24 +1,55 @@
 import React, { useState } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Signup = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [passwordMatchError, setPasswordMatchError] = useState("");
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const email = data.email;
+    const password = data.password;
+    const cpassword = data.cpassword;
+    if (password === cpassword) {
+      createUserWithEmailAndPassword(email, password);
+    } else {
+      setPasswordMatchError(
+        <p className="text-danger text-start mt-3">
+          Passwords didn't match, try again
+        </p>
+      );
+    }
+  };
+  let displayError;
+  if (error) {
+    displayError = <p className="text-danger">{error?.message}</p>;
+  }
+  if (user) {
+    window.location.reload();
+  }
+
   return (
     <div className="d-flex justify-content-between w-100">
       <form onSubmit={handleSubmit(onSubmit)} className="w-50">
+        {displayError}
         <div className="d-flex">
           <input
             {...register("firstName", { required: true })}
             className="form-control w-50 rounded-0 bg-light p-2"
             placeholder="First Name"
+            type="text"
           />
           <input
             {...register("lastName", { required: true })}
             className="form-control w-50 rounded-0 bg-light p-2"
             placeholder="Last Name"
+            type="text"
           />
         </div>
 
@@ -26,19 +57,23 @@ const Signup = () => {
           {...register("email", { required: true })}
           className="form-control rounded-0 bg-light p-2"
           placeholder="Email"
+          type="email"
         />
 
         <input
           {...register("password", { required: true })}
           className="form-control rounded-0 bg-light p-2"
           placeholder="Password"
+          type="password"
         />
 
         <input
           {...register("cpassword", { required: true })}
           className="form-control rounded-0 bg-light p-2"
           placeholder="Confirm Password"
+          type="password"
         />
+        {passwordMatchError}
         <br />
         <input
           type="submit"

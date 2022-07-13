@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
@@ -13,6 +16,10 @@ const Navigation = () => {
   const handleClose2 = () => setShow2(false);
   const handleShow = () => setShow(true);
   const handleShow2 = () => setShow2(true);
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+  };
   return (
     <Navbar bg="light" expand="lg" className="fixed-top">
       <Container>
@@ -26,67 +33,79 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="ms-auto">
             <NavDropdown
-              title="Create an Account.Its Free"
+              title={user ? `${user?.email}` : `Create an Account.Its Free`}
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item>
-                {" "}
+              {!user ? (
                 <>
-                  <Button
-                    variant="link text-decoration-none text-dark"
-                    onClick={handleShow}
-                  >
-                    Signup
-                  </Button>
+                  {" "}
+                  <NavDropdown.Item>
+                    {" "}
+                    <>
+                      <Button
+                        variant="link text-decoration-none text-dark"
+                        onClick={handleShow}
+                      >
+                        Signup
+                      </Button>
 
-                  <Modal show={show} onHide={handleClose}>
-                    <p
-                      style={{ fontSize: "11px", backgroundColor: "#EFFFF4" }}
-                      className="p-2 text-success"
-                    >
-                      Let's learn, share & inspire each other with our passion
-                      for computer engineering. Sign up now 🤘🏼
-                    </p>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Create Account</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <Signup></Signup>
-                    </Modal.Body>
-                  </Modal>
+                      <Modal show={show} onHide={handleClose}>
+                        <p
+                          style={{
+                            fontSize: "11px",
+                            backgroundColor: "#EFFFF4",
+                          }}
+                          className="p-2 text-success"
+                        >
+                          Let's learn, share & inspire each other with our
+                          passion for computer engineering. Sign up now 🤘🏼
+                        </p>
+                        <Modal.Header closeButton>
+                          <Modal.Title>Create Account</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <Signup></Signup>
+                        </Modal.Body>
+                      </Modal>
+                    </>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <>
+                      <Button
+                        variant="link text-decoration-none text-dark"
+                        onClick={handleShow2}
+                      >
+                        Login
+                      </Button>
+
+                      <Modal show={show2} onHide={handleClose2}>
+                        <p
+                          style={{
+                            fontSize: "11px",
+                            backgroundColor: "#EFFFF4",
+                          }}
+                          className="p-2 text-success"
+                        >
+                          Let's learn, share & inspire each other with our
+                          passion for computer engineering. Sign up now 🤘🏼
+                        </p>
+                        <Modal.Header closeButton>
+                          <Modal.Title>Sign In</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <Login></Login>
+                        </Modal.Body>
+                      </Modal>
+                    </>
+                  </NavDropdown.Item>
                 </>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <>
-                  <Button
-                    variant="link text-decoration-none text-dark"
-                    onClick={handleShow2}
-                  >
-                    Login
-                  </Button>
-
-                  <Modal show={show2} onHide={handleClose2}>
-                    <p
-                      style={{ fontSize: "11px", backgroundColor: "#EFFFF4" }}
-                      className="p-2 text-success"
-                    >
-                      Let's learn, share & inspire each other with our passion
-                      for computer engineering. Sign up now 🤘🏼
-                    </p>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Sign In</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <Login></Login>
-                    </Modal.Body>
-                  </Modal>
-                </>
-              </NavDropdown.Item>
-
-              <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <button className="btn btn-primary">Logout</button>{" "}
-              </NavDropdown.Item>
+              ) : (
+                <NavDropdown.Item>
+                  <button className="btn btn-primary" onClick={logout}>
+                    Logout
+                  </button>{" "}
+                </NavDropdown.Item>
+              )}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
