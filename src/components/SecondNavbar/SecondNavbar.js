@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { AiFillCaretDown } from "react-icons/ai";
 import { MdGroupAdd } from "react-icons/md";
+import {NavLink } from "react-router-dom";
 const SecondNavbar = () => {
   return (
     <Navbar
@@ -17,28 +18,28 @@ const SecondNavbar = () => {
       className="container  border-bottom my-5"
     >
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand to="#home">All Posts</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Article</Nav.Link>
-            <Nav.Link href="#pricing">Event</Nav.Link>
-            <Nav.Link href="#pricing">Education</Nav.Link>
-            <Nav.Link href="#pricing">Job</Nav.Link>
+            <NavLink to="/article" className="text-decoration-none text-dark me-2">Article</NavLink>
+            <NavLink to="/event"  className="text-decoration-none text-dark me-2">Event</NavLink>
+            <NavLink to="/education"  className="text-decoration-none text-dark me-2">Education</NavLink>
+            <NavLink to="/job"  className="text-decoration-none text-dark me-2">Job</NavLink>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">
+            <NavLink to="#deets">
               <button className="btn btn-light text-dark">
                 Write a Post <AiFillCaretDown></AiFillCaretDown>
               </button>
-            </Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            </NavLink>
+            <NavLink eventKey={2} to="#memes">
               <button className="btn btn-primary">
                 {" "}
-                <MdGroupAdd style={{ fontSize: "20px" }}></MdGroupAdd> Join
+                <MdGroupAdd style={{ fontSize: "20px" }} className="ms-2"></MdGroupAdd> Join
                 Group
               </button>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
