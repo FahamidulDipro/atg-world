@@ -1,9 +1,10 @@
 import React from 'react';
+import WritePost from '../WritePost/WritePost';
 
 const Sidebar = () => {
     return (
         <div>
-            Sidebar
+            <WritePost></WritePost>
         </div>
     );
 };
