@@ -48,7 +48,7 @@ const Navigation = () => {
 
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
+                      <Modal.Title>Create Account</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       <Signup></Signup>
