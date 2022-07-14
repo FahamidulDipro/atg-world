@@ -7,7 +7,8 @@ import Login from "../Login/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
-
+import { AiOutlineSearch } from "react-icons/ai";
+import "./Navigation.css";
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -20,13 +21,27 @@ const Navigation = () => {
   const logout = () => {
     signOut(auth);
   };
+
   return (
-    <Navbar bg="light" expand="lg" className="fixed-top">
+    <Navbar bg="white" expand="lg" className="fixed-top">
       <Container>
-        <Navbar.Brand className="text-uppercase ">
+        <Navbar.Brand className="text-uppercase d-flex justify-content-between w-50">
           <NavLink to="/" className="text-decoration-none text-dark fw-bold">
             ATG World
           </NavLink>
+          <div style={{ position: "relative" }}>
+            <input
+              type="text"
+              style={{
+                backgroundColor: "#D3D3D3",
+                fontSize: "12px",
+                width: "150%",
+              }}
+              className=" ms-5 rounded-pill border-0 p-2"
+              placeholder="        Search for your favorite groups in ATG"
+            />
+            <AiOutlineSearch className="search_icon"></AiOutlineSearch>
+          </div>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -34,9 +34,10 @@ const SecondNavbar = () => {
       className="container  border-bottom my-5"
     >
       <Container>
-        <Navbar.Brand to="#home">All Posts(32)</Navbar.Brand>
+        <Navbar.Brand to="#home" className="fw-bold">All Posts(32)</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+  
           <Nav className="me-auto">
             <NavLink to="/article" className="text-decoration-none text-dark me-2">Article</NavLink>
             <NavLink to="/event"  className="text-decoration-none text-dark me-2">Event</NavLink>
