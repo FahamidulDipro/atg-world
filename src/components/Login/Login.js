@@ -15,10 +15,15 @@ const Login = () => {
     const password = data.password;
     signInWithEmailAndPassword(email, password);
   };
+  let displayError;
+  if (error) {
+    displayError = <p className="text-danger">{error?.message}</p>;
+  }
 
   return (
     <div className="d-flex justify-content-between w-100">
       <form onSubmit={handleSubmit(onSubmit)} className="w-50">
+        {displayError}
         <input
           {...register("email", { required: true })}
           className="form-control rounded-0 bg-light p-2"

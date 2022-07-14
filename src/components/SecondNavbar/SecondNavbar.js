@@ -13,9 +13,20 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { MdGroupAdd } from "react-icons/md";
 import {NavLink } from "react-router-dom";
 import auth from "../../firebase.init";
- 
+import { signOut } from "firebase/auth";
+
 const SecondNavbar = () => {
   const [user] = useAuthState(auth);
+  const handleJoinGroup = ()=>{
+    
+      alert("Please Log In to join Group");
+    
+  }
+  const leaveGroupHandler = ()=>{
+   
+      signOut(auth);
+    
+  }
   return (
     <Navbar
       expand="lg"
@@ -34,17 +45,17 @@ const SecondNavbar = () => {
           </Nav>
           <Nav>
             <NavLink to="#deets">
-              <button className="btn btn-light text-dark">
+              <button className="btn btn-light text-dark fw-bold">
                 Write a Post <AiFillCaretDown></AiFillCaretDown>
               </button>
             </NavLink>
             <NavLink eventKey={2} to="#memes">
               {
-                !user?  <button className="btn btn-primary ms-3">
+                !user?  <button className="btn btn-primary ms-3" onClick={handleJoinGroup}>
                 {" "}
                 <MdGroupAdd style={{ fontSize: "20px" }} className="ms-2"></MdGroupAdd> Join
                 Group
-              </button>:<button className="btn btn-light ms-3"><MdOutlineExitToApp style={{ fontSize: "20px" }} className="me-2"/> Leave Group</button>
+              </button>:<button className="btn btn-light ms-3" onClick={leaveGroupHandler}><MdOutlineExitToApp style={{ fontSize: "20px" }} className="me-2"/> Leave Group</button>
               }
             
             </NavLink>

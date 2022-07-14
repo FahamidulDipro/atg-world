@@ -33,7 +33,16 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="ms-auto">
             <NavDropdown
-              title={user ? `${user?.email}` : `Create an Account.Its Free`}
+              title={
+                user ? (
+                  `${user?.email}`
+                ) : (
+                  <span className="fw-bold">
+                    Create account.{" "}
+                    <span className="text-primary "> It’s free!</span>
+                  </span>
+                )
+              }
               id="basic-nav-dropdown"
             >
               {!user ? (
