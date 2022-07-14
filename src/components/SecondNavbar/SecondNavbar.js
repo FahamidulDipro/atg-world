@@ -7,10 +7,15 @@ import {
   Form,
   Button,
 } from "react-bootstrap";
+import { MdOutlineExitToApp } from "react-icons/md";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { AiFillCaretDown } from "react-icons/ai";
 import { MdGroupAdd } from "react-icons/md";
 import {NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
+ 
 const SecondNavbar = () => {
+  const [user] = useAuthState(auth);
   return (
     <Navbar
       expand="lg"
@@ -18,7 +23,7 @@ const SecondNavbar = () => {
       className="container  border-bottom my-5"
     >
       <Container>
-        <Navbar.Brand to="#home">All Posts</Navbar.Brand>
+        <Navbar.Brand to="#home">All Posts(32)</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -34,11 +39,14 @@ const SecondNavbar = () => {
               </button>
             </NavLink>
             <NavLink eventKey={2} to="#memes">
-              <button className="btn btn-primary">
+              {
+                !user?  <button className="btn btn-primary ms-3">
                 {" "}
                 <MdGroupAdd style={{ fontSize: "20px" }} className="ms-2"></MdGroupAdd> Join
                 Group
-              </button>
+              </button>:<button className="btn btn-light ms-3"><MdOutlineExitToApp style={{ fontSize: "20px" }} className="me-2"/> Leave Group</button>
+              }
+            
             </NavLink>
           </Nav>
         </Navbar.Collapse>
