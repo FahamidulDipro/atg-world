@@ -40,9 +40,9 @@ const SecondNavbar = () => {
   
           <Nav className="me-auto">
             <NavLink to="/article" className="text-decoration-none text-dark me-2">Article</NavLink>
-            <NavLink to="/event"  className="text-decoration-none text-dark me-2">Event</NavLink>
-            <NavLink to="/education"  className="text-decoration-none text-dark me-2">Education</NavLink>
-            <NavLink to="/job"  className="text-decoration-none text-dark me-2">Job</NavLink>
+            <NavLink to="#"  className="text-decoration-none text-dark me-2">Event</NavLink>
+            <NavLink to="#"  className="text-decoration-none text-dark me-2">Education</NavLink>
+            <NavLink to="#"  className="text-decoration-none text-dark me-2">Job</NavLink>
           </Nav>
           <Nav>
             <NavLink to="#deets">

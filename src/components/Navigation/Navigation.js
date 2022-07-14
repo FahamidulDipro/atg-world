@@ -9,6 +9,7 @@ import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./Navigation.css";
+import { MdAcUnit } from "react-icons/md";
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -26,8 +27,12 @@ const Navigation = () => {
     <Navbar bg="white" expand="lg" className="fixed-top">
       <Container>
         <Navbar.Brand className="text-uppercase d-flex justify-content-between w-50">
-          <NavLink to="/" className="text-decoration-none text-dark fw-bold">
-            ATG World
+          <NavLink to="/" className="text-decoration-none text-dark ">
+            <span style={{ color: "#27A365" }}>ATG.</span> W{""}
+            <MdAcUnit
+              style={{ fontSize: "20px", color: "#00A854", fontWeight: "bold" }}
+            ></MdAcUnit>
+            rld
           </NavLink>
           <div style={{ position: "relative" }}>
             <input
