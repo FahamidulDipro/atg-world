@@ -1,56 +1,45 @@
 [
   {
-    "catagory": "Sweet",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
+    "catagory": "✍️ Article",
+    "postImage": "https://images.unsplash.com/photo-1637573544833-85aeba5247eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&w=1000&q=80",
     "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
     "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Schroeder Cantu",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+    "name": "Sarthak Kamra",
+    "userImg": "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwbWFsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
     "views": 1.4
   },
   {
-    "catagory": "Valenzuela",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
-    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
+    "catagory": "🔬️ Education",
+    "postImage": "https://images.unsplash.com/photo-1613648151564-af20e0a92991?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+    "title": "Tax Benefits for Investment under National Pension Scheme launched by Government",
     "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Walton Mclaughlin",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+    "name": "Sarah West",
+    "userImg": "data:image/jpeg;base64,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",
     "views": 1.4
   },
   {
-    "catagory": "Decker",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
-    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Edith Andrews",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
-    "views": 1.4
+    "catagory": "🗓️ Meetup",
+    "postImage": "https://images.unsplash.com/photo-1535360392524-dedff4c8b227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&w=1000&q=80",
+    "title": "Finance & Investment Elite Social Mixer @Lujiazui",
+
+    "name": "Ronal Jones",
+    "userImg": "https://themes.kadencethemes.com/ascend-5/wp-content/uploads/2019/01/dan-1147269-unsplash-square.jpg",
+    "views": 1.4,
+    "date": "Fri, 12 Oct, 2018",
+    "location": "Ahmedabad, India",
+    "btn": "Visit Website",
+    "color": "#E56135"
   },
   {
-    "catagory": "Vargas",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
-    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Kaufman Mckinney",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
-    "views": 1.4
-  },
-  {
-    "catagory": "Kline",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
-    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Stanton Lindsey",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
-    "views": 1.4
-  },
-  {
-    "catagory": "Mcclure",
-    "postImage": "https://www.nsbpictures.com/wp-content/uploads/2020/04/sunset-hd-background-photos-12-scaled.jpg",
-    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "details": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
-    "name": "Kane Stokes",
-    "userImg": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
-    "views": 1.4
+    "catagory": "💼️ Job",
+
+    "title": "Software Developer",
+    "name": "Joseph Gray",
+    "userImg": "https://www.washburnhouse.com/wp-content/uploads/2019/08/luis-villasmil-1222180-unsplash-1.jpg",
+    "views": 1.4,
+    "date": "Innovaccer Analytics Private Ltd.",
+    "location": "Noida, India",
+    "btn": "Apply on Timesjobs",
+    "color": "#02B875"
   }
 ]
